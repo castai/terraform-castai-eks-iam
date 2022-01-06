@@ -25,7 +25,7 @@ output "instance_profile_arn" {
 }
 
 output "instance_profile_role_arn" {
-  description = "Arn of created instance profile"
+  description = "Arn of created instance profile role"
   value       = aws_iam_role.instance_profile_role.arn
 }
 
