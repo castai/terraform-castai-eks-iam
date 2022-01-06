@@ -15,6 +15,6 @@ output "user_name" {
   value = module.castai-aws-iam.user_name
 }
 
-output "instance_profile_role_arn" {
-  value = module.castai-aws-iam.instance_profile_role_arn
+output "instance_profile_arn" {
+  value = module.castai-aws-iam.instance_profile_arn
 }
