@@ -49,14 +49,6 @@ resource "aws_iam_user_policy_attachment" "castai_iam_lambda_policy_attachment" 
   policy_arn = each.value
 }
 
-resource "aws_iam_user_policy_attachment" "castai_user_iam_policy_attachment" {
-  for_each = toset(data.castai_eks_settings.eks.iam_managed_policies)
-
-  user       = aws_iam_user.castai.name
-  policy_arn = each.key
-  depends_on = [aws_iam_policy.castai_iam_policy]
-}
-
 # iam - instance profile role
 
 resource "aws_iam_role" "instance_profile_role" {
