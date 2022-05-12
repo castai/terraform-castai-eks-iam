@@ -43,10 +43,10 @@ resource "aws_iam_user_policy" "castai_user_iam_policy" {
 }
 
 resource "aws_iam_user_policy_attachment" "castai_iam_readonly_policy_attachment" {
-  for_each = toset(
+  for_each = toset([
     "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess",
     "arn:aws:iam::aws:policy/IAMReadOnlyAccess",
-  )
+  ])
 
   user       = aws_iam_user.castai.name
   policy_arn = each.value
